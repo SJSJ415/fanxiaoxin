@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="扮玩江湖：以芯子戏台为核心、七馆与休闲区环绕的三德范村非遗体验空间。"
+    />
+    <title>扮玩江湖｜三德范村非遗空间预演</title>
+    <link rel="stylesheet" href="./styles.css?v=20261126-zoom1" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="scene-panel" aria-label="三德范村非遗体验空间场景">
+        <div class="scene-sky" aria-hidden="true">
+          <span class="scene-sun"></span>
+          <span class="mountain mountain-far"></span>
+          <span class="mountain mountain-near"></span>
+        </div>
+        <canvas id="scene-canvas" aria-label="芯子戏台与七馆庭院三维场景"></canvas>
+        <div class="scene-wash" aria-hidden="true"></div>
+        <div class="scene-lights" aria-hidden="true">
+          <span class="scene-light scene-light--one"></span>
+          <span class="scene-light scene-light--two"></span>
+          <span class="scene-light scene-light--three"></span>
+          <span class="scene-light scene-light--four"></span>
+        </div>
+        <div class="landmark-layer" id="landmark-layer" aria-label="场景建筑标记">
+          <button class="landmark-pin landmark-pin--primary" type="button" data-landmark="stage" data-view="stage">
+            <i></i><span>芯子戏台</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-0" data-view="heritage">
+            <i></i><span>扮玩文化博物馆</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-1" data-view="heritage">
+            <i></i><span>乡村记忆民俗馆</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-2" data-view="heritage">
+            <i></i><span>江湖农民记忆馆</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-3" data-view="heritage">
+            <i></i><span>江湖特色石刻馆</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-4" data-view="heritage">
+            <i></i><span>三德范钱庄</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-5" data-view="heritage">
+            <i></i><span>江湖档案馆</span>
+          </button>
+          <button class="landmark-pin" type="button" data-landmark="museum-6" data-view="heritage">
+            <i></i><span>非遗手作体验馆</span>
+          </button>
+          <button class="landmark-pin landmark-pin--leisure" type="button" data-landmark="leisure" data-view="leisure">
+            <i></i><span>拾遗归隐・文化休闲区</span>
+          </button>
+        </div>
+
+        <div class="scene-caption" aria-hidden="true">
+          <span>空间关系</span>
+          <b>七馆环艺 · 一核两区</b>
+        </div>
+      </section>
+
+      <aside class="info-card" aria-labelledby="info-title">
+        <div class="info-card__frame" aria-hidden="true"></div>
+        <div class="panel-head">
+          <span id="panel-index">空间原型 01</span>
+          <i></i>
+          <span id="panel-zone">三德范村</span>
+        </div>
+
+        <div class="panel-title-wrap">
+          <h1 id="info-title">扮玩江湖</h1>
+          <p id="panel-subtitle">芯子戏台 · 七馆两区</p>
+        </div>
+
+        <p class="panel-summary" id="panel-summary">
+          以芯子戏台为视觉核心，江湖初探・非遗传承区与拾遗归隐・文化休闲区分别展开，形成文化导入、深度体验与休闲停留的完整游线。
+        </p>
+
+        <div class="space-list" id="space-list"></div>
+
+        <div class="panel-footer">
+          <span class="footer-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="m4 9 8-5 8 5-8 5-8-5Z" />
+              <path d="m4 14 8 5 8-5M4 19l8 5 8-5" />
+            </svg>
+          </span>
+          <p id="panel-note">
+            轻量空间原型 · 用于预览村落更新、游客动线与业态布局
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <header class="topbar">
+      <button class="brand" id="brand-home" type="button" aria-label="返回空间总览">
+        <svg class="brand-mark" viewBox="0 0 54 40" aria-hidden="true">
+          <path d="M2 35h50M8 35V15l10-8 10 8v20M21 35V22h7v13" />
+          <path d="M34 35V20h14v15M36 20l5-8 6 8" />
+        </svg>
+        <span class="brand-title">扮玩江湖</span>
+        <span class="brand-seal" aria-hidden="true">三德</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-subtitle">传统村落沉浸体验空间</span>
+      </button>
+
+      <div class="tools" aria-label="页面工具">
+        <button class="guide-tool" id="guide-toggle" type="button" aria-label="召唤范小芯">
+          <img src="./assets/fan-xiaoxin.png" alt="" />
+          <span>范小芯</span>
+        </button>
+        <button id="sound-toggle" type="button" aria-label="开启环境声音" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 10v4h3l4 3V7l-4 3H5Z" />
+            <path d="M16 9.3a4 4 0 0 1 0 5.4M18.8 6.5a8 8 0 0 1 0 11" />
+          </svg>
+        </button>
+        <button id="focus-toggle" type="button" aria-label="专注查看场景" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.2" />
+            <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+          </svg>
+        </button>
+        <button id="fullscreen-toggle" type="button" aria-label="进入全屏">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="zoom-controls" role="group" aria-label="场景缩放">
+      <button id="zoom-in" type="button" aria-label="放大场景" title="放大场景">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      </button>
+      <span class="zoom-controls__divider" aria-hidden="true"></span>
+      <button id="zoom-out" type="button" aria-label="缩小场景" title="缩小场景">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14" />
+        </svg>
+      </button>
+      <span class="zoom-controls__divider" aria-hidden="true"></span>
+      <button id="zoom-reset" class="zoom-controls__reset" type="button" aria-label="返回场景全景" title="返回全景">
+        <span>全</span>
+      </button>
+    </div>
+
+    <nav class="bottom-nav" aria-label="空间分区">
+      <button class="nav-item is-active" type="button" data-view="overview">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m3 12 9-7 9 7M5 10v9h14v-9M9 19v-5h6v5" />
+        </svg>
+        <span>场景总览</span>
+      </button>
+      <button class="nav-item" type="button" data-view="heritage">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m4 9 8-5 8 5-8 5-8-5ZM4 14l8 5 8-5" />
+        </svg>
+        <span>非遗传承区</span>
+      </button>
+      <button class="nav-item" type="button" data-view="leisure">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 19V9l7-4 7 4v10M9 19v-6h6v6M3 19h18" />
+        </svg>
+        <span>文化休闲区</span>
+      </button>
+      <button class="nav-item" type="button" data-view="stage">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 5h16v13H4zM7 5v9M17 5v9M7 14h10M8 21h8M12 18v3" />
+        </svg>
+        <span>芯子戏台</span>
+      </button>
+      <button class="nav-item" type="button" data-view="route">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="6" cy="6" r="2" />
+          <circle cx="18" cy="18" r="2" />
+          <path d="M8 6h4a3 3 0 0 1 3 3v3a3 3 0 0 0 3 3M6 8v5a3 3 0 0 0 3 3h1" />
+        </svg>
+        <span>游客动线</span>
+      </button>
+    </nav>
+
+    <section class="intro-screen" id="intro-screen" aria-labelledby="guide-title">
+      <div class="intro-backdrop" aria-hidden="true"></div>
+      <div class="intro-panel" role="dialog" aria-modal="true">
+        <button class="intro-close" id="intro-close" type="button" aria-label="关闭引导">
+          <span></span><span></span>
+        </button>
+
+        <div class="guide-character">
+          <div class="guide-halo" aria-hidden="true"></div>
+          <img src="./assets/fan-xiaoxin.png" alt="芯子技艺少年传承人范小芯" />
+          <div class="guide-nameplate">
+            <small>三德范芯子技艺少年传承人</small>
+            <strong id="guide-title">范小芯</strong>
+          </div>
+        </div>
+
+        <div class="guide-dialogue">
+          <div class="dialogue-kicker">
+            <span>来自三德范的江湖帖</span>
+            <i></i>
+            <b>01</b>
+          </div>
+          <p class="dialogue-hello">侠客，欢迎来到三德范！</p>
+          <h2>扮玩大会就要开始了，<br />可扮玩图谱却散落古村。</h2>
+          <p class="dialogue-copy">
+            我是范小芯，三德范的芯子技艺少年传承人。年度扮玩大会将至，藏在七馆与休闲区的扮玩图谱却意外遗失。你愿意和我一起走遍古村三区，找回图谱、拜访传承人、习得技艺，共同完成这场非遗盛会吗？
+          </p>
+
+          <div class="story-steps" aria-label="主线任务">
+            <span><i>壹</i><b>寻回图谱</b><small>走遍七馆五区</small></span>
+            <span><i>贰</i><b>习得技艺</b><small>完成非遗挑战</small></span>
+            <span><i>叁</i><b>重开大会</b><small>共同完成扮玩盛会</small></span>
+          </div>
+
+          <div class="dialogue-actions">
+            <button class="accept-quest" id="accept-quest" type="button">
+              <span>接下这封江湖帖</span>
+              <i>→</i>
+            </button>
+            <button class="explore-first" id="explore-first" type="button">
+              先看看村落
+            </button>
+          </div>
+          <p class="guide-note">非遗传承人把关文化本真性 · 范小芯将全程陪伴你的江湖之旅</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./scene.js?v=20261126-zoom1"></script>
+    <script src="./app.js?v=20261126-zoom1" defer></script>
+  </body>
+</html>
